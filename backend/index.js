@@ -1,10 +1,10 @@
-dotenv.config();
+
 
 const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const cors = require('cors');
-
+dotenv.config();
 
 
 const app = express();
@@ -43,8 +43,8 @@ app.use((req, res) => {
   res.status(404).json({ message: " Route not found" });
 });
 
-// Start Server
-// app.listen(PORT, () => {
-//   console.log(` Server running on http://localhost:${PORT}`);
-// });
-module.exports = app;
+//Start Server
+app.listen(PORT, () => {
+  console.log(` Server running on http://localhost:${PORT}`);
+});
+// module.exports = app;
