@@ -15,12 +15,21 @@ function Home() {
         <p className="text-lg text-gray-800 mb-8 leading-relaxed">
           Welcome to your smart inventory management system. Track, manage, and restock with ease.
         </p>
-        <a
-          href="/login"
-          className="inline-block bg-gradient-to-r from-green-500 to-emerald-600 hover:from-emerald-600 hover:to-green-500 text-white font-semibold text-lg px-8 py-3 rounded-full shadow-lg transition-all duration-300 hover:scale-105"
-        >
-          Go to Login
-        </a>
+
+        <div className="flex justify-center gap-4">
+          <a
+            href="/login"
+            className="inline-block bg-gradient-to-r from-green-500 to-emerald-600 hover:from-emerald-600 hover:to-green-500 text-white font-semibold text-lg px-8 py-3 rounded-full shadow-lg transition-all duration-300 hover:scale-105"
+          >
+            Go to Login
+          </a>
+          <a
+            href="/signup"
+            className="inline-block bg-gradient-to-r from-green-500 to-emerald-600 hover:from-emerald-600 hover:to-green-500 text-white font-semibold text-lg px-8 py-3 rounded-full shadow-lg transition-all duration-300 hover:scale-105"
+          >
+            Go to Signup
+          </a>
+        </div>
       </motion.div>
     </div>
   );

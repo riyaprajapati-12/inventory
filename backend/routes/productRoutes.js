@@ -10,14 +10,26 @@ const {
   getExpired,
 } = require("../controllers/productController");
 
-const authMiddleware = require("../middleware/authMiddleware");
+const authMiddleware = require("../middleware/authMiddleware")
+router.use(authMiddleware);
 
+// Get all products for logged-in user
+router.get("/", getAllProducts);
 
-router.get("/", authMiddleware, getAllProducts);
-router.post("/", authMiddleware, addProduct);
-router.delete("/:id", authMiddleware, deleteProduct);
-router.put("/:id", authMiddleware, updateProduct);
-router.get("/low-stock", authMiddleware, getLowStock);
-router.get("/expired", authMiddleware, getExpired);
+// Add product for logged-in user
+router.post("/", addProduct);
+
+// Delete product (only if owned by user)
+router.delete("/:id", deleteProduct);
+
+// Update product (only if owned by user)
+router.put("/:id", updateProduct);
+
+// Low stock products for logged-in user
+router.get("/low-stock", getLowStock);
+
+// Expired products for logged-in user
+router.get("/expired", getExpired);
 
 module.exports = router;
+
