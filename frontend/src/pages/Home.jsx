@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 function Home() {
   return (
@@ -17,18 +18,18 @@ function Home() {
         </p>
 
         <div className="flex justify-center gap-4">
-          <a
-            href="/login"
+          <Link
+            to="/login"
             className="inline-block bg-gradient-to-r from-green-500 to-emerald-600 hover:from-emerald-600 hover:to-green-500 text-white font-semibold text-lg px-8 py-3 rounded-full shadow-lg transition-all duration-300 hover:scale-105"
           >
             Go to Login
-          </a>
-          <a
-            href="/signup"
+          </Link>
+          <Link
+            to="/signup"
             className="inline-block bg-gradient-to-r from-green-500 to-emerald-600 hover:from-emerald-600 hover:to-green-500 text-white font-semibold text-lg px-8 py-3 rounded-full shadow-lg transition-all duration-300 hover:scale-105"
           >
             Go to Signup
-          </a>
+          </Link>
         </div>
       </motion.div>
     </div>
