@@ -4,7 +4,7 @@ const axiosInstance = axios.create({
   baseURL:
     window.location.hostname === "localhost"
       ? "http://localhost:8080/api"
-      : "/api",
+      : "https://inventory-zbq9.onrender.com",
   headers: {
     "Content-Type": "application/json",
   },
