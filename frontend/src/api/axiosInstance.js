@@ -1,8 +1,10 @@
 import axios from "axios";
 
-
 const axiosInstance = axios.create({
-  baseURL: "http://localhost:8080/api", 
+  baseURL:
+    window.location.hostname === "localhost"
+      ? "http://localhost:8080/api"
+      : "/api",
   headers: {
     "Content-Type": "application/json",
   },
@@ -10,7 +12,7 @@ const axiosInstance = axios.create({
 
 axiosInstance.interceptors.request.use(
   (config) => {
-    const token = localStorage.getItem("token"); 
+    const token = localStorage.getItem("token");
     if (token) {
       config.headers["Authorization"] = `Bearer ${token}`;
     }
@@ -20,3 +22,4 @@ axiosInstance.interceptors.request.use(
 );
 
 export default axiosInstance;
+
