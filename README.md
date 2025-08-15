@@ -1,4 +1,4 @@
-only admin can login so you need to add this toh your .env file
+only admin can login so you need to add this to your .env file
 
 PORT=
 
